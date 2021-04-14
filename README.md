@@ -1,14 +1,28 @@
 # Todo List
 
-_What dose this do?:_ This is a Todo List checker that will allow the user to enter things
-in which they wish to do and once they are finished doing a task, they can mark it off.
+## Table of Contents
 
-## Example
+- Overview
+- Built With
+- Features
+- Contact
+- Acknowledgements
 
-Bob has a lot on his plate for the day. He has to take the kids to school, pick up butter at the super market,
-mail a letter, pick up the kds after school, then finally get home and fix up dinner. All Bob has to do is
-type in a task and it will be added to a list. He can then mark off what he has already done.
+## Overview
 
-- **This program is perfectly functional!**
-- **State of the art typing for your ease of access!**
-- **Can access anywhere!**
+1.
+2. Getting this set up so far has been pretty simple, just setting up the variables and functions. HTML and CSS were fairly easy to set up as well.
+3. I have been figuring out call back functions better now and I am really excited about that.
+4. Remember that FormData uses name attributes from the form when your submitting.
+
+### Built With
+
+[Visual Studio Code](https://code.visualstudio.com/)
+
+### Features
+
+This app allows users to input task Todo and will later be allowed to be marked off as done.
+
+## Acknowledgements
+
+[MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web)
