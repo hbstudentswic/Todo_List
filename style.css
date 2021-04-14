@@ -7,3 +7,7 @@ body {
 .button {
   width: 220px;
 }
+
+.done {
+  text-decoration: line-through;
+}
