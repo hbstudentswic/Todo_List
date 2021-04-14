@@ -1,4 +1,4 @@
-# Front-End 'Noob' Starter
+# Todo List
 
 **Try the CodeTour 🗺️.** [More info here.](https://github.com/microsoft/codetour#starting-tours)
 
