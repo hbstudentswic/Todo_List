@@ -13,3 +13,11 @@ form.addEventListener('submit', event => {
   ul.innerHTML = newToDo;
   // innerHTML - just assign a string that has HTML inside of it
 });
+
+// TODO: Bring the entered task from the unordered list and put them into an array. I would imagine we would do this by using Array map
+
+const tasksUL = document.querySelectorAll('ul');
+
+const tasksArray = Array.from(tasksUL);
+
+const tasks = tasksArray.map(task => task.querySelector('ul'));
