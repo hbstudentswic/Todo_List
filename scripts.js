@@ -1,10 +1,15 @@
 const form = document.querySelector('form');
-const task = [];
+
+document.body.appendChild(document.createElement('ul'));
+
+const ul = document.querySelector('ul'); /* adds a empty unordered list */
 
 form.addEventListener('submit', event => {
-  event.preventDefault();
-  const newTask = Object.fromEntries(new FormData(event.target));
-  console.log(newTask); /* To be removed */
-  task.push(newTask);
-  const div = document.createElement('div');
+  event.preventDefault(); /* prevents page from refreshing on submit which is the browsers default behavior */
+
+  const newToDo = `<li>${event.target.elements[0].value}</li>`;
+  /* will pull out text value from the form, thats why we use elements[0] */
+
+  ul.innerHTML = newToDo;
+  // innerHTML - just assign a string that has HTML inside of it
 });
