@@ -1,17 +1,29 @@
-const form = document.querySelector('form');
-
 document.body.appendChild(document.createElement('ul'));
 
-const ul = document.querySelector('ul'); /* adds a empty unordered list */
+const ul = document.querySelector('ul');
 
-form.addEventListener('submit', event => {
-  event.preventDefault(); /* prevents page from refreshing on submit which is the browsers default behavior */
-  // TODO: Take the tex from the input  [DONE]
-  // TODO: Wrap that in an '<li></li>'
-  // TODO: Append that to the '<ul></ul>'
-  const newToDo = `<li>${event.target.elements[0].value}</li>`;
-  /* will pull out text value from the form, thats why we use elements[0] */
+const todos = [];
 
-  ul.innerHTML = newToDo;
+document.querySelector('form').addEventListener('submit', event => {
+  event.preventDefault();
+
+  const id = Date.now();
+
+  const newToDo = `
+    <li>
+    <input type="checkbox" id="${id}">
+    <label for="${id}">${event.target.elements[0].value}</label>
+    </li>
+  `;
+
+  todos.push({
+    task: event.target.elements[0].value,
+    completed: false,
+    id: Date.now(),
+  });
+
+  console.log(todos);
+
   // innerHTML - just assign a string that has HTML inside of it
+  ul.innerHTML = newToDo;
 });
