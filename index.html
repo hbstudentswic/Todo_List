@@ -15,16 +15,12 @@
   </head>
   <body>
     <h1>Todo List</h1>
-    <form>
-      <div>
-        <label for="newTask">Enter a Task!</label>
-        <input type="text" id="newTask" name="newTask" />
-      </div>
-      <div>
-        <button type="submit" class="button">Enter</button>
-      </div>
-    </form>
 
+    <form>
+      <label for="add-todo" class="screen-reader-text">Add a Todo</label>
+      <input type="text" id="add-todo" />
+      <button type="submit" class="button button--jumbo">Add Todo</button>
+    </form>
     <script src="./scripts.js" type="module"></script>
   </body>
 </html>
