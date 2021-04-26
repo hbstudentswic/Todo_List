@@ -35,7 +35,6 @@ document.querySelector('form').addEventListener('submit', event => {
 
   console.log(todos);
 
+  // Render/re-render
   renderTodo(todos);
 });
-
-// Render/re-render
