@@ -22,6 +22,8 @@ function renderTodo(todoItems) {
 // The above function is the function that will render all the todo's at the same time, it will no longer just replace the same one.
 
 // ___Business Logic___ //
+renderTodo(todos);
+
 document.querySelector('form').addEventListener('submit', event => {
   event.preventDefault();
 
@@ -33,8 +35,13 @@ document.querySelector('form').addEventListener('submit', event => {
     id, // Object shorthand, we don't have to do 'id: (id)' if we just write id like this here since it will stand for 'id: (id)'
   });
 
-  console.log(todos);
-
   // Render/re-render
   renderTodo(todos);
+});
+
+document.querySelectorAll(`input[type="checkbox"]`).forEach(checkbox => {
+  checkbox.addEventListener('change', event => {
+    // iterate over `todos` and keep going until the `id` of a todo item matches with the `id` that is coming from the input we just checked
+    todos.find(({ id }) => id === Number(event.target.id));
+  });
 });
