@@ -69,3 +69,10 @@ body {
   position: absolute;
   top: -9999px;
 }
+
+/* JS Classes */
+
+/* This class will be added for any todo item with a `completed: true` */
+.is-completed {
+  text-decoration: line-through;
+}
