@@ -1,5 +1,5 @@
 // Variable Declarations
-const ul = document.body.appendChild(document.createElement('ul'));
+const ul = document.body.appendChild(document.createElement('ul')); // Creates the unordered list and appends it to the page.
 
 const todos = [
   {
@@ -52,19 +52,21 @@ const todos = [
   },
 ];
 
-// Function Declarations
+// _____Function Declarations_____ //
+// Below is the render function
 function renderTodos(todoItems) {
   // TODO: Turn a bunch of todos into a full li
   ul.innerHTML = todoItems
     .map(({ id, task, completed }) => {
       if (completed) {
+        // This uses boolean to determine if it is completed
         return `
         <li class="is-completed">
         <input type="checkbox" id="${id}" >
         <label for="${id}">${task}</label>
         </li>
         `;
-      }
+      } // We don't have to use an else statement for this if statement boolean check.
 
       return `
   <li>
@@ -77,9 +79,15 @@ function renderTodos(todoItems) {
 
   // TODO: Move this to its own function - use ES Modules
   document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+    // .forEach(checkbox => {checkbox.addEventListener}) means for each checkbox on that page add an event listener
     checkbox.addEventListener('change', ({ target }) => {
-      // Iterate over `todos` and keep going until the `id` of a todo item matches with the `id` that is coming from the input we just checked
+      // the event.target or ({ target }) here will check to see which particular todo checkbox we interacted with.
+
+      // this will iterate over `todos` and keep going until the `id` of a todo item matches with the `id` that is coming from the input we just checked
+
+      // The target.id in this example is the id of the todo that we have selected. the Id was generated and assigned above.
       const foundTodo = todos.find(({ id }) => id === Number(target.id));
+      // The foundTodo is a variable that once the specific todo item is found, it will be assigned to it (the foundTodo variable)
 
       // Inverse the boolean
       foundTodo.completed = !foundTodo.completed;
@@ -88,7 +96,7 @@ function renderTodos(todoItems) {
   });
 }
 
-// Business Logic
+// _____Business Logic_____ //
 renderTodos(todos);
 
 document.querySelector('form').addEventListener('submit', event => {
@@ -106,4 +114,5 @@ document.querySelector('form').addEventListener('submit', event => {
 
   // Render/re-render
   renderTodos(todos);
+  // TIP we re-render that todo so often to keep the page updated and re-attach the event listeners to the objects that are rendered, since when we re-render the page, the objects "are completely re-created", they are not the same in memory as they were before.
 });
