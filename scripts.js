@@ -55,7 +55,7 @@ const todos = [
 // _____Function Declarations_____ //
 // Below is the render function
 function renderTodos(todoItems) {
-  // TODO: Turn a bunch of todos into a full li
+  // TODO: Turn a bunch of todos into a full li [DONE]
   ul.innerHTML = todoItems
     .map(({ id, task, completed }) => {
       if (completed) {
