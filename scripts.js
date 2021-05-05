@@ -1,5 +1,9 @@
-// Variable Declarations
-const ul = document.body.appendChild(document.createElement('ul')); // Creates the unordered list and appends it to the page.
+// ___Variable Declarations___ \\
+
+const ul = document.body.appendChild(document.createElement('ul'));
+// Creates the unordered list and appends it to the page.
+
+const todosCounter = document.querySelector('#todos-counter');
 
 const todos = [
   {
@@ -94,6 +98,9 @@ function renderTodos(todoItems) {
       renderTodos(todos);
     });
   });
+  todosCounter.innerText = `${ul.querySelectorAll('.is-completed').length} / ${
+    todos.length
+  }`;
 }
 
 // _____Business Logic_____ //
