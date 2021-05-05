@@ -68,6 +68,7 @@ function renderTodos(todoItems) {
         <li class="is-completed">
         <input type="checkbox" id="${id}" >
         <label for="${id}">${task}</label>
+        <input type="button" id="${id}" >
         </li>
         `;
       } // We don't have to use an else statement for this if statement boolean check.
@@ -76,6 +77,7 @@ function renderTodos(todoItems) {
   <li>
   <input type="checkbox" id="${id}">
   <label for="${id}">${task}</label>
+  <input type="button" id="${id}" >
   </li>
   `;
     })
@@ -122,4 +124,12 @@ document.querySelector('form').addEventListener('submit', event => {
   // Render/re-render
   renderTodos(todos);
   // TIP we re-render that todo so often to keep the page updated and re-attach the event listeners to the objects that are rendered, since when we re-render the page, the objects "are completely re-created", they are not the same in memory as they were before.
+});
+
+document.querySelectorAll('input[type="button"]').forEach(button => {
+  button.addEventListener('click', ({ target }) => {
+    const selectedTodo = todos.find(({ id }) => id === Number(target.id));
+    todos.removeChild(selectedTodo); // Looked at node.removeChild() on MDN
+    renderTodos(todos);
+  });
 });
